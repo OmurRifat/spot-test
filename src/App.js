@@ -38,7 +38,7 @@ function App() {
     },
     {
       path: '*',
-      element: <h2 className='App'>404 || Page Not Found.</h2>
+      element: <h2 className='App'>404 || Page Not Found, Plese back to home manue.</h2>
     }
   ])
   return (
