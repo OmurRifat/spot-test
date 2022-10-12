@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Question = (props) => {
-    const { question, options, correctAnswer } = props.question;
+    const { question, options } = props.question;
     // console.log(question, options, correctAnswer)
     return (
         <div className='md:w-1/2 mx-auto my-8 md:bg-gray-200 rounded-lg md:px-40 md:py-10'>
