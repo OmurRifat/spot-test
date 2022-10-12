@@ -4,6 +4,7 @@ import Home from './components/Home/Home';
 import Main from './layouts/Main';
 import SpotTests from './components/SpotTests/SpotTests';
 import Analysis from './components/Analysis/Analysis';
+import Blogs from './components/Blogs/Blogs'
 
 function App() {
   const router = createBrowserRouter([
@@ -22,6 +23,10 @@ function App() {
         {
           path: '/analysis',
           element: <Analysis></Analysis>
+        },
+        {
+          path: '/blogs',
+          element: <Blogs></Blogs>
         }
       ]
     },
