@@ -30,12 +30,10 @@ function App() {
           element: <Blogs></Blogs>
         },
         {
-          path: 'tests/:questionId',
-          loader: async ({ params }) => {
-            return await fetch(`https://openapi.programming-hero.com/api/quiz${params.questionId}`)
-          },
+          path: '/tests/:questionId',
+          loader: ({ params }) => fetch(`https://openapi.programming-hero.com/api/quiz/${params.questionId}`),
           element: <Questions></Questions>
-        }
+        },
       ]
     },
     {
