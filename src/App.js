@@ -2,23 +2,33 @@ import logo from './logo.svg';
 import './App.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Home from './components/Home/Home';
-import Header from './components/Header/Header';
+import Main from './layouts/Main';
+import SpotTests from './components/SpotTests/SpotTests';
+import Analysis from './components/Analysis/Analysis';
 
 function App() {
   const router = createBrowserRouter([
     {
       path: '/',
-      element: <Header></Header>,
+      element: <Main></Main>,
       children: [
         {
-          path: 'home',
+          path: '/',
           element: <Home></Home>
+        },
+        {
+          path: '/tests',
+          element: <SpotTests></SpotTests>
+        },
+        {
+          path: '/analysis',
+          element: <Analysis></Analysis>
         }
       ]
     },
     {
       path: '*',
-      element: <h2>404 || Page Not Found.</h2>
+      element: <h2 className='App'>404 || Page Not Found.</h2>
     }
   ])
   return (
