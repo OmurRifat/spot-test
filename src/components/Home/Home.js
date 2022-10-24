@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import img from '../../images/top-section.jpg'
 import './Home.css'
 import SpotTests from '../SpotTests/SpotTests'
+import { AuthContext } from '../../userContext/AuthProvider/AuthProvider';
 
 const Home = () => {
+    const { } = useContext(AuthContext)
     return (
         <div>
             <div className='home-container lg:flex items-center justify-items-center'>

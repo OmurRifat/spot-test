@@ -1,11 +1,14 @@
 import './App.css';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, Link, RouterProvider } from 'react-router-dom';
 import Home from './components/Home/Home';
 import Main from './layouts/Main';
 import Analysis from './components/Analysis/Analysis';
 import Blogs from './components/Blogs/Blogs'
 import SpotTests from './components/SpotTests/SpotTests';
 import Questions from './components/Questions/Questions'
+import Login from './components/Authentication/Login/Login';
+import Register from './components/Authentication/Register/Register';
+import PrivateRoute from './components/Routes/PrivateRoute/PrivateRoute';
 
 function App() {
   const router = createBrowserRouter([
@@ -23,7 +26,7 @@ function App() {
         },
         {
           path: '/analysis',
-          element: <Analysis></Analysis>
+          element: <PrivateRoute><Analysis></Analysis></PrivateRoute>
         },
         {
           path: '/blogs',
@@ -31,14 +34,22 @@ function App() {
         },
         {
           path: '/tests/:questionId',
-          loader: ({ params }) => fetch(`https://openapi.programming-hero.com/api/quiz/${params.questionId}`),
-          element: <Questions></Questions>
+          loader: ({ params }) => fetch(`https://spot-test-server.vercel.app/quiz/${params.questionId}`),
+          element: <PrivateRoute><Questions></Questions></PrivateRoute>
         },
+        {
+          path: '/register',
+          element: <Register></Register>
+        },
+        {
+          path: '/login',
+          element: <Login></Login>
+        }
       ]
     },
     {
       path: '*',
-      element: <h2 className='App'>404 || Page Not Found, Plese back to home manue.</h2>
+      element: <h2 className=''>404 || Page Not Found, Plese back to <Link to='/'>home</Link>.</h2>
     }
   ])
   return (

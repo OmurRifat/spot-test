@@ -4,7 +4,7 @@ import SpotTest from '../SpotTest/SpotTest'
 const SpotTests = () => {
     const [topics, setTopics] = useState([]);
     useEffect(() => {
-        fetch("https://openapi.programming-hero.com/api/quiz")
+        fetch("https://spot-test-server.vercel.app/quiz")
             .then(res => res.json())
             .then(data => setTopics(data.data));
     }, [])

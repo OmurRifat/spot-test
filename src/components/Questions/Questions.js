@@ -5,6 +5,7 @@ import Question from '../Question/Question'
 const Questions = () => {
     const data = useLoaderData();
     const questions = data.data.questions;
+
     // console.log(questions)
     return (
         <div className=''>
